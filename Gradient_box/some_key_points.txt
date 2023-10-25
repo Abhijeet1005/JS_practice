@@ -1,0 +1,4 @@
+box.addEventListener("mousemove",function(details)
+box.getBoundingClientRect()
+gsap.utils.mapRange(-10, 10, 100, 200, 0); //also GSAP cdn script to integrate into HTML
+gsap.to(box,{backgroundColor: rgb(0,0,0)})
