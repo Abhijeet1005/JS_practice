@@ -1,0 +1,1 @@
+window.addEventListener() // attaching it to window to monitor overall cursor movement
