@@ -18,10 +18,11 @@
         }
 
         start.addEventListener('click',function(e){
-            theInterval = setInterval(doIt,100)
+            theInterval = setInterval(doIt,1000)
         })
         stopIt.addEventListener('click',function(e){
             clearInterval(theInterval)
+            theInterval = null
         })
         
     </script>
