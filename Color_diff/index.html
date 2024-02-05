@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        let start = document.querySelector('#start')
+        let stopIt = document.querySelector('#stop')
+        let theInterval
+
+        function doIt(){
+            document.body.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+        }
+
+        start.addEventListener('click',function(e){
+            theInterval = setInterval(doIt,100)
+        })
+        stopIt.addEventListener('click',function(e){
+            clearInterval(theInterval)
+        })
+        
+    </script>
+</body>
+</html>
