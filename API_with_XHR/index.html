@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card" style="width: 18rem;">
+        <img src="" class="card-img-top" id="image" alt="...">
+        <div class="card-body">
+          <p class="card-text" id="imageText">Username</p>
+        </div>
+      </div>
+
+      <script>
+        let myUrl = 'https://randomuser.me/api/'
+        let xhr = new XMLHttpRequest();
+        let text = document.querySelector('#imageText')
+        let image = document.querySelector('#image')
+        xhr.open('GET',myUrl)
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState)
+            if(xhr.readyState === 4){
+                let data = JSON.parse(this.responseText)
+                text.innerHTML = data.results[0].name.first
+                image.src = data.results[0].picture.large
+            }
+        }
+        xhr.send()
+      </script>
+</body>
+</html>
